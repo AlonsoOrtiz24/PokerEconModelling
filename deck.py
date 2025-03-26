@@ -16,6 +16,12 @@ class Card:
     def __repr__(self):
         return self.__str__()
 
+    def __eq__(self, other): #these are called magic methods because they happen without calling them directly
+        return self.rank == other.rank
+
+    def __gt__(self, other):
+        return self.RANKS.index(self.rank) >self.RANKS.index(other.rank)
+
     @property
     def suit(self):
         return self._suit
@@ -30,6 +36,7 @@ class Deck:
         for suit in Card.SUITS:
             for rank in Card.RANKS:
                 self._deck.append(Card(suit, rank))
+
 
     def __str__(self):
         return str(self._deck)
