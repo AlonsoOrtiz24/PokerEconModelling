@@ -26,7 +26,7 @@ class Card:
         Returns a string representation of the card.
 
         Returns:
-        str: The card in the format 'RankSuit', e.g., '10♠'.
+        str: The card in the format 'RankSuit'.
         """
         return f"{self._rank}{self._suit}"
 
